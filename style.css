@@ -1,0 +1,470 @@
+/* Reset & Grundlegendes */
+:root {
+    --primary-color: #0A2E5C; /* Dunkelblau */
+    --secondary-color: #4A90E2; /* Helleres Blau */
+    --accent-color: #50E3C2; /* Türkis/Mint Akzent */
+    --text-color: #333;
+    --background-color: #f8f9fa; /* Sehr helles Grau / Off-White */
+    --card-background: #ffffff;
+    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Klare, moderne Schrift */
+    --base-font-size: 16px;
+    --container-width: 1100px;
+    --animation-duration: 0.7s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Für sanftes Scrollen bei internen Links */
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--base-font-size);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+}
+
+/* Navigation */
+header {
+    background-color: var(--card-background);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+nav {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+
+nav ul li a::after { /* Subtile Hover-Animation für Nav-Links */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease-out;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active-link::after {
+    width: 100%;
+}
+
+nav ul li a:hover,
+nav ul li a.active-link {
+    color: var(--secondary-color);
+}
+
+.language-switcher button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0.2rem 0.4rem;
+    margin: 0 0.2rem;
+    border-radius: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.language-switcher button.active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+.language-switcher button:not(.active):hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--primary-color); /* Fallback, wenn Animation nicht lädt */
+    color: white;
+    position: relative;
+    overflow: hidden; /* Wichtig für Hintergrundanimationen */
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 50px; /* Rams mochte abgerundete Ecken oft (z.B. Braun SK4) */
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    background-color: #48dab9; /* Etwas hellerer Akzent */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* Hero Hintergrund Animation (Beispiel: sich bewegende Punkte) */
+.hero-background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-background-animation .dot {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1); /* Sehr subtil */
+    border-radius: 50%;
+    animation: float 20s infinite ease-in-out;
+}
+
+.hero-background-animation .dot:nth-child(1) { width: 80px; height: 80px; top: 20%; left: 10%; animation-duration: 15s; }
+.hero-background-animation .dot:nth-child(2) { width: 50px; height: 50px; top: 70%; left: 30%; animation-duration: 22s; animation-delay: 3s; }
+.hero-background-animation .dot:nth-child(3) { width: 100px; height: 100px; top: 40%; left: 80%; animation-duration: 18s; animation-delay: 1s;}
+.hero-background-animation .dot:nth-child(4) { width: 30px; height: 30px; top: 85%; left: 60%; animation-duration: 25s; animation-delay: 2s;}
+.hero-background-animation .dot:nth-child(5) { width: 60px; height: 60px; top: 10%; left: 50%; animation-duration: 17s; animation-delay: 4s;}
+
+
+@keyframes float {
+    0% { transform: translateY(0px) translateX(0px) scale(1); opacity: 0.1; }
+    50% { transform: translateY(-30px) translateX(20px) scale(1.1); opacity: 0.15; }
+    100% { transform: translateY(0px) translateX(0px) scale(1); opacity: 0.1; }
+}
+
+
+/* Allgemeine Sektions-Stile */
+.content-section {
+    padding: 5rem 2rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+/* Subtile Unterstreichung für Titel, die animiert werden kann */
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    /* Diese Breite kann per JS oder Scroll-Animation verändert werden */
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.accent-bg {
+    background-color: #eef3f7; /* Sehr leichtes Blau-Grau, um Abwechslung zu schaffen */
+}
+
+/* About Section - Kollaborations-Visualisierung */
+.collab-visual {
+    margin-top: 2rem;
+    /* Hier könnte eine komplexere SVG-Animation platziert werden */
+}
+
+/* Services Section */
+.service-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap; /* Für kleinere Bildschirme */
+}
+
+.service-card {
+    background-color: var(--card-background);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    flex-basis: calc(50% - 2rem); /* Zwei Karten pro Reihe, minus gap */
+    min-width: 300px; /* Für kleinere Bildschirme */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.service-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 1rem;
+    fill: var(--secondary-color); /* Wenn es SVGs sind */
+    color: var(--secondary-color); /* Fallback */
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+/* Process / Kollaborations-Timeline */
+.process-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 3rem;
+}
+
+.process-step {
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    margin-bottom: 2rem;
+    width: 80%;
+    max-width: 500px;
+    text-align: left;
+    position: relative; /* Für Nummerierung */
+}
+
+.process-step-number {
+    position: absolute;
+    left: -25px; /* Außerhalb der Box */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--secondary-color);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+.process-step h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    padding-left: 35px; /* Platz für Nummer */
+}
+.process-step p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    padding-left: 35px; /* Platz für Nummer */
+}
+
+
+/* Linien-Konnektoren (optional, können auch mit JS animiert werden) */
+.process-connector {
+    width: 4px;
+    height: 50px; /* Höhe des Abstands zwischen Boxen */
+    background-color: var(--accent-color);
+    margin-bottom: 2rem; /* Selber Margin wie Boxen */
+    opacity: 0.6;
+}
+/* Letzten Konnektor entfernen */
+.process-timeline .process-step:last-of-type + .process-connector,
+.process-timeline .process-step:last-of-type {
+    margin-bottom: 0;
+}
+.process-timeline .process-step:last-of-type + .process-connector {
+    display: none;
+}
+
+
+/* Kontaktformular */
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    text-align: left;
+    background: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.contact-form div {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--font-family);
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    padding: 1rem; /* Größerer Button für Formular */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+}
+
+/* Basis-Animationen (können durch JS-Bibliotheken wie AOS oder GSAP ersetzt/erweitert werden) */
+.animate-on-load, .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--animation-duration) ease-out, transform var(--animation-duration) ease-out;
+}
+
+.animate-on-load.delay-1, .animate-on-scroll.delay-1 { transition-delay: 0.2s; }
+.animate-on-load.delay-2, .animate-on-scroll.delay-2 { transition-delay: 0.4s; }
+.animate-on-scroll.delay-05 { transition-delay: 0.1s; } /* Feinere Abstufung für Timeline */
+.animate-on-scroll.delay-15 { transition-delay: 0.3s; }
+.animate-on-scroll.delay-25 { transition-delay: 0.5s; }
+.animate-on-scroll.delay-3 { transition-delay: 0.6s; }
+
+
+/* Wenn die Elemente sichtbar werden (via JS oder :target etc.) */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Responsive Design Anpassungen */
+@media (max-width: 992px) {
+    .hero-content h1 { font-size: 2.8rem; }
+    .hero-content p { font-size: 1.1rem; }
+    .content-section h2 { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+    nav ul { display: none; /* Hier müsste ein Burger-Menü implementiert werden */ }
+    .hero-content h1 { font-size: 2.2rem; }
+    .service-container { flex-direction: column; align-items: center; }
+    .service-card { flex-basis: 80%; margin-bottom: 1.5rem; }
+    .process-step { width: 90%; }
+    .process-step-number { left: -15px; width: 40px; height: 40px; font-size: 1.2rem; }
+    .process-step h4, .process-step p { padding-left: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Reduzierte Animationen für Nutzer, die dies wünschen */
+  .animate-on-load, .animate-on-scroll, .hero-background-animation .dot, .cta-button, .service-card, nav ul li a::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important; /* Setzt Transformationen zurück, wenn sie nur für Animation da sind */
+    opacity: 1 !important; /* Stellt sicher, dass Elemente sichtbar sind */
+  }
+  html {
+    scroll-behavior: auto; /* Deaktiviert sanftes Scrollen */
+  }
+  .cta-button:hover {
+    /* minimale Hover-Effekte beibehalten, wenn sie nützlich sind */
+    background-color: #48dab9;
+  }
+   .service-card:hover {
+    transform: none;
+  }
+}
