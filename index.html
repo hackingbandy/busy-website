@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ihr Name - BI & AI Lösungen durch Kollaboration</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-text">IhrLogo</span>
+            </div>
+            <ul>
+                <li><a href="#hero" data-lang="nav_home">Start</a></li>
+                <li><a href="#about" data-lang="nav_about">Unser Ansatz</a></li>
+                <li><a href="#services" data-lang="nav_services">Lösungen</a></li>
+                <li><a href="#process" data-lang="nav_process">Kollaboration</a></li>
+                <li><a href="#contact" data-lang="nav_contact">Kontakt</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button id="lang-de" class="active">DE</button>
+                <span>/</span>
+                <button id="lang-en">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 data-lang="hero_title" class="animate-on-load">Gemeinsam gestalten. Intelligent wachsen.</h1>
+                <p data-lang="hero_subtitle" class="animate-on-load delay-1">Wir entwickeln nicht nur BI- & AI-Lösungen für Sie – wir bauen sie mit Ihnen. Ihr Partner für datengestützte Transformation.</p>
+                <a href="#contact" class="cta-button animate-on-load delay-2" data-lang="hero_cta">Lassen Sie uns starten</a>
+            </div>
+            <div class="hero-background-animation">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2 data-lang="about_title" class="animate-on-scroll">Mehr als Beratung: Partnerschaftliche Entwicklung</h2>
+            <p data-lang="about_text" class="animate-on-scroll delay-1">Herkömmliche Beratung liefert Konzepte. Wir gehen weiter: Wir konzipieren, entwickeln und implementieren BI- und AI-Lösungen Hand in Hand mit Ihrem Team. Dieser kollaborative Ansatz stellt sicher, dass die Lösungen perfekt auf Ihre Bedürfnisse zugeschnitten sind und Ihr internes Know-how wächst.</p>
+            <div class="collab-visual animate-on-scroll delay-2">
+                <img src="assets/images/icon-collab.svg" alt="Kollaboration Icon" style="width:100px; height:auto; opacity:0.7;">
+                 </div>
+        </section>
+
+        <section id="services" class="content-section accent-bg">
+            <h2 data-lang="services_title" class="animate-on-scroll">Unsere Expertise: Ihre Daten, Ihr Vorsprung</h2>
+            <div class="service-container">
+                <div class="service-card animate-on-scroll">
+                    <img src="assets/images/icon-bi.svg" alt="BI Icon" class="service-icon"> <h3 data-lang="service_bi_title">Business Intelligence</h3>
+                    <p data-lang="service_bi_text">Verwandeln Sie Rohdaten in aussagekräftige Einblicke. Von Dashboards bis zu umfassenden Reporting-Systemen – wir schaffen Klarheit.</p>
+                </div>
+                <div class="service-card animate-on-scroll delay-1">
+                    <img src="assets/images/icon-ai.svg" alt="AI Icon" class="service-icon"> <h3 data-lang="service_ai_title">Artificial Intelligence</h3>
+                    <p data-lang="service_ai_text">Nutzen Sie die Kraft der KI. Von Machine Learning Modellen bis zu intelligenten Automatisierungen – wir bringen Innovation in Ihre Prozesse.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="content-section">
+            <h2 data-lang="process_title" class="animate-on-scroll">Unser kollaborativer Weg zum Erfolg</h2>
+            <div class="process-timeline">
+                <div class="process-step animate-on-scroll">
+                    <div class="process-step-number">1</div>
+                    <h4 data-lang="process_step1_title">Verstehen & Definieren</h4>
+                    <p data-lang="process_step1_text">Gemeinsame Analyse Ihrer Ziele und Herausforderungen.</p>
+                </div>
+                <div class="process-connector animate-on-scroll delay-05"></div>
+                <div class="process-step animate-on-scroll delay-1">
+                    <div class="process-step-number">2</div>
+                    <h4 data-lang="process_step2_title">Konzipieren & Planen</h4>
+                    <p data-lang="process_step2_text">Entwicklung einer maßgeschneiderten Lösungsarchitektur.</p>
+                </div>
+                <div class="process-connector animate-on-scroll delay-15"></div>
+                <div class="process-step animate-on-scroll delay-2">
+                    <div class="process-step-number">3</div>
+                    <h4 data-lang="process_step3_title">Bauen & Integrieren</h4>
+                    <p data-lang="process_step3_text">Iterative Entwicklung und nahtlose Integration in Ihre Systeme.</p>
+                </div>
+                <div class="process-connector animate-on-scroll delay-25"></div>
+                <div class="process-step animate-on-scroll delay-3">
+                    <div class="process-step-number">4</div>
+                    <h4 data-lang="process_step4_title">Schulen & Übergeben</h4>
+                    <p data-lang="process_step4_text">Wissenstransfer und Befähigung Ihres Teams.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section accent-bg">
+            <h2 data-lang="contact_title" class="animate-on-scroll">Bereit für den nächsten Schritt?</h2>
+            <p data-lang="contact_text" class="animate-on-scroll delay-1">Kontaktieren Sie uns für ein unverbindliches Erstgespräch.</p>
+            <form class="contact-form animate-on-scroll delay-2">
+                <div>
+                    <label for="name" data-lang="contact_form_name">Ihr Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email" data-lang="contact_form_email">Ihre E-Mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message" data-lang="contact_form_message">Ihre Nachricht</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta-button" data-lang="contact_form_submit">Senden</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p data-lang="footer_text">© 2024 Ihr Firmenname. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    </body>
+</html>
