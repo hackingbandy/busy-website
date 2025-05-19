@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ihr Name - BI & AI Lösungen durch Kollaboration</title>
+    <title>Ihr Name - Kollaborative BI & AI Lösungen</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+</head>
 <body>
-    <header>
-        <nav>
+
+    <header class="main-header">
+        <nav class="main-nav">
             <div class="logo">
-                <span class="logo-text">IhrLogo</span>
+                <a href="#hero" data-lang="company_name_placeholder">IhrLogo</a>
             </div>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="#hero" data-lang="nav_home">Start</a></li>
                 <li><a href="#about" data-lang="nav_about">Unser Ansatz</a></li>
                 <li><a href="#services" data-lang="nav_services">Lösungen</a></li>
@@ -30,36 +31,51 @@
     <main>
         <section id="hero" class="hero-section">
             <div class="hero-content">
-                <h1 data-lang="hero_title" class="animate-on-load">Gemeinsam gestalten. Intelligent wachsen.</h1>
-                <p data-lang="hero_subtitle" class="animate-on-load delay-1">Wir entwickeln nicht nur BI- & AI-Lösungen für Sie – wir bauen sie mit Ihnen. Ihr Partner für datengestützte Transformation.</p>
-                <a href="#contact" class="cta-button animate-on-load delay-2" data-lang="hero_cta">Lassen Sie uns starten</a>
+                <h1 data-lang="hero_title" class="animate-on-scroll">Gemeinsam gestalten. Intelligent wachsen.</h1>
+                <p data-lang="hero_subtitle" class="animate-on-scroll delay-1">Wir entwickeln nicht nur BI- & AI-Lösungen für Sie – wir bauen sie mit Ihnen. Ihr Partner für datengestützte Transformation.</p>
+                <a href="#contact" class="cta-button animate-on-scroll delay-2" data-lang="hero_cta">Lassen Sie uns starten</a>
             </div>
-            <div class="hero-background-animation">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
+            <div class="hero-particles" id="hero-particles-container">
+                </div>
         </section>
 
         <section id="about" class="content-section">
             <h2 data-lang="about_title" class="animate-on-scroll">Mehr als Beratung: Partnerschaftliche Entwicklung</h2>
-            <p data-lang="about_text" class="animate-on-scroll delay-1">Herkömmliche Beratung liefert Konzepte. Wir gehen weiter: Wir konzipieren, entwickeln und implementieren BI- und AI-Lösungen Hand in Hand mit Ihrem Team. Dieser kollaborative Ansatz stellt sicher, dass die Lösungen perfekt auf Ihre Bedürfnisse zugeschnitten sind und Ihr internes Know-how wächst.</p>
-            <div class="collab-visual animate-on-scroll delay-2">
-                <img src="assets/images/icon-collab.svg" alt="Kollaboration Icon" style="width:100px; height:auto; opacity:0.7;">
-                 </div>
+            <p data-lang="about_text" class="section-intro animate-on-scroll delay-1">Herkömmliche Beratung liefert Konzepte. Wir gehen weiter: Wir konzipieren, entwickeln und implementieren BI- und AI-Lösungen Hand in Hand mit Ihrem Team. Dieser kollaborative Ansatz stellt sicher, dass die Lösungen perfekt auf Ihre Bedürfnisse zugeschnitten sind und Ihr internes Know-how nachhaltig wächst.</p>
+            <div class="collaboration-visual animate-on-scroll delay-2">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <title data-lang="collaboration_icon_title">Kollaborationssymbol: Zwei Zahnräder</title>
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:var(--secondary-color);stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:var(--accent-color);stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path id="gear1" fill="url(#grad1)" opacity="0.7" d="M50,20 a30,30 0 0 1 0,60 a30,30 0 0 1 0,-60 m0,10 a20,20 0 0 0 0,40 a20,20 0 0 0 0,-40 Z M50,15 l0,-5 M50,85 l0,5 M15,50 l-5,0 M85,50 l5,0 M26.34,26.34 l-3.53,-3.53 M73.66,73.66 l3.53,3.53 M26.34,73.66 l-3.53,3.53 M73.66,26.34 l3.53,-3.53" stroke="none">
+                        <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="10s" repeatCount="indefinite"/>
+                    </path>
+                    <circle id="gear2" cx="70" cy="70" r="12" fill="url(#grad1)" opacity="0.6">
+                        <animateTransform attributeName="transform" type="rotate" from="0 70 70" to="-360 70 70" dur="8s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
         </section>
 
         <section id="services" class="content-section accent-bg">
             <h2 data-lang="services_title" class="animate-on-scroll">Unsere Expertise: Ihre Daten, Ihr Vorsprung</h2>
-            <div class="service-container">
+            <div class="service-grid">
                 <div class="service-card animate-on-scroll">
-                    <img src="assets/images/icon-bi.svg" alt="BI Icon" class="service-icon"> <h3 data-lang="service_bi_title">Business Intelligence</h3>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H8V8H4V4ZM10 4H14V8H10V4ZM16 4H20V8H16V4ZM4 10H8V14H4V10ZM10 10H14V14H10V10ZM16 10H20V14H16V10ZM4 16H8V20H4V16ZM10 16H14V20H10V16ZM16 16H20V20H16V16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 data-lang="service_bi_title">Business Intelligence</h3>
                     <p data-lang="service_bi_text">Verwandeln Sie Rohdaten in aussagekräftige Einblicke. Von Dashboards bis zu umfassenden Reporting-Systemen – wir schaffen Klarheit.</p>
                 </div>
                 <div class="service-card animate-on-scroll delay-1">
-                    <img src="assets/images/icon-ai.svg" alt="AI Icon" class="service-icon"> <h3 data-lang="service_ai_title">Artificial Intelligence</h3>
+                    <div class="service-icon">
+                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L9 7H15L12 2ZM7 9L2 12L7 15V9ZM17 9V15L22 12L17 9ZM9 17H15L12 22L9 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 data-lang="service_ai_title">Artificial Intelligence</h3>
                     <p data-lang="service_ai_text">Nutzen Sie die Kraft der KI. Von Machine Learning Modellen bis zu intelligenten Automatisierungen – wir bringen Innovation in Ihre Prozesse.</p>
                 </div>
             </div>
@@ -67,58 +83,55 @@
 
         <section id="process" class="content-section">
             <h2 data-lang="process_title" class="animate-on-scroll">Unser kollaborativer Weg zum Erfolg</h2>
-            <div class="process-timeline">
+            <div class="process-timeline" id="process-timeline">
                 <div class="process-step animate-on-scroll">
                     <div class="process-step-number">1</div>
                     <h4 data-lang="process_step1_title">Verstehen & Definieren</h4>
                     <p data-lang="process_step1_text">Gemeinsame Analyse Ihrer Ziele und Herausforderungen.</p>
                 </div>
-                <div class="process-connector animate-on-scroll delay-05"></div>
                 <div class="process-step animate-on-scroll delay-1">
                     <div class="process-step-number">2</div>
                     <h4 data-lang="process_step2_title">Konzipieren & Planen</h4>
                     <p data-lang="process_step2_text">Entwicklung einer maßgeschneiderten Lösungsarchitektur.</p>
                 </div>
-                <div class="process-connector animate-on-scroll delay-15"></div>
                 <div class="process-step animate-on-scroll delay-2">
                     <div class="process-step-number">3</div>
                     <h4 data-lang="process_step3_title">Bauen & Integrieren</h4>
                     <p data-lang="process_step3_text">Iterative Entwicklung und nahtlose Integration in Ihre Systeme.</p>
                 </div>
-                <div class="process-connector animate-on-scroll delay-25"></div>
                 <div class="process-step animate-on-scroll delay-3">
                     <div class="process-step-number">4</div>
                     <h4 data-lang="process_step4_title">Schulen & Übergeben</h4>
-                    <p data-lang="process_step4_text">Wissenstransfer und Befähigung Ihres Teams.</p>
+                    <p data-lang="process_step4_text">Wissenstransfer und Befähigung Ihres Teams für nachhaltigen Erfolg.</p>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="content-section accent-bg">
             <h2 data-lang="contact_title" class="animate-on-scroll">Bereit für den nächsten Schritt?</h2>
-            <p data-lang="contact_text" class="animate-on-scroll delay-1">Kontaktieren Sie uns für ein unverbindliches Erstgespräch.</p>
-            <form class="contact-form animate-on-scroll delay-2">
-                <div>
-                    <label for="name" data-lang="contact_form_name">Ihr Name</label>
-                    <input type="text" id="name" name="name" required>
+            <p data-lang="contact_text" class="section-intro animate-on-scroll delay-1">Kontaktieren Sie uns für ein unverbindliches Erstgespräch. Wir freuen uns darauf, gemeinsam mit Ihnen innovative Lösungen zu entwickeln.</p>
+            <form class="contact-form-container animate-on-scroll delay-2" id="contactForm">
+                <div class="form-group">
+                    <label for="name" data-lang="contact_form_name_label">Ihr Name</label>
+                    <input type="text" id="name" name="name" required data-lang="contact_form_name_placeholder" placeholder="Max Mustermann">
                 </div>
-                <div>
-                    <label for="email" data-lang="contact_form_email">Ihre E-Mail</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <label for="email" data-lang="contact_form_email_label">Ihre E-Mail</label>
+                    <input type="email" id="email" name="email" required data-lang="contact_form_email_placeholder" placeholder="max.mustermann@beispiel.de">
                 </div>
-                <div>
-                    <label for="message" data-lang="contact_form_message">Ihre Nachricht</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                <div class="form-group">
+                    <label for="message" data-lang="contact_form_message_label">Ihre Nachricht</label>
+                    <textarea id="message" name="message" rows="5" required data-lang="contact_form_message_placeholder" placeholder="Wie können wir Ihnen helfen?"></textarea>
                 </div>
-                <button type="submit" class="cta-button" data-lang="contact_form_submit">Senden</button>
+                <button type="submit" class="cta-button" data-lang="contact_form_submit">Nachricht senden</button>
             </form>
         </section>
     </main>
 
-    <footer>
-        <p data-lang="footer_text">© 2024 Ihr Firmenname. Alle Rechte vorbehalten.</p>
+    <footer class="main-footer">
+        <p data-lang="footer_text">© 2025 Firmenname. Alle Rechte vorbehalten.</p>
     </footer>
 
-    <script src="script.js"></script>
-    </body>
+    <script src="script.js" defer></script>
+</body>
 </html>
