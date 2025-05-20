@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_form_email_placeholder: "max.mustermann@beispiel.de",
             contact_form_message_label: "Ihre Nachricht",
             contact_form_message_placeholder: "Wie können wir Ihnen helfen?",
+            // NEW: Added direct email button text and separator
+            contact_direct_email_button: "Direkt E-Mail schreiben",
             contact_form_submit: "Nachricht senden",
             contact_form_submitted_message: "Vielen Dank! Ihre Nachricht wurde (simuliert) gesendet.",
             footer_text: "© 2025 Haxley. Alle Rechte vorbehalten."
@@ -76,6 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_form_message_label: "Your Message",
             contact_form_message_placeholder: "How can we help you?",
             contact_form_submit: "Send Message",
+            // NEW: Added direct email button text and separator
+            contact_direct_email_button: "Send an Email Directly",
             contact_form_submitted_message: "Thank you! Your message has been sent (simulation).",
             footer_text: "© 2025 Haxley. All rights reserved."
         }
